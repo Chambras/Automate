@@ -11,9 +11,9 @@ jobs:
     name: Code Analysis
     uses: chambras/automate/.github/workflows/staticCodeAnalysis.yml@main
 
-  terraformAzure:
+  terraformAzureDev:
     needs: [codeAnalysis]
-    name: Build on Azure
+    name: Dev Build
     uses: chambras/automate/.github/workflows/terraformAzure.yml@main
     with:
       terraform-version: 1.0.10

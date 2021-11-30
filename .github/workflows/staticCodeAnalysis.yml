@@ -14,7 +14,7 @@ on:
 
 jobs:
   tflint:
-    name: Static code analysis using tflint
+    name: tflint
     runs-on: ubuntu-latest
     defaults:
       run:

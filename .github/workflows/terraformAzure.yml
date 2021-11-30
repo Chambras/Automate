@@ -38,7 +38,7 @@ on:
 
 jobs:
   terraform:
-    name: 'Terraform'
+    name: 'Terraform-Azure'
     runs-on: ubuntu-latest
     defaults:
       run:

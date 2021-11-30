@@ -1,4 +1,4 @@
-name: 'Terraform'
+name: 'Terraform-Azure'
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   terraform:
-    name: 'Terraform'
+    name: 'Terraform-Azure'
     runs-on: ubuntu-latest
 
     environment: Prod
