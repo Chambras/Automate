@@ -25,3 +25,16 @@ jobs:
       ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
       TF_API_TOKEN: ${{ secrets.TF_API_TOKEN }}
 
+  terraformAzureProd:
+    needs: [terraformAzureDev]
+    name: Prod Build
+    uses: chambras/automate/.github/workflows/terraformAzure.yml@main
+    with:
+      terraform-version: 1.0.10
+      environment: Prod
+    secrets:
+      ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+      ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+      ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+      ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+      TF_API_TOKEN: ${{ secrets.TF_API_TOKEN }}
