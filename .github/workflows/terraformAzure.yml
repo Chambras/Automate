@@ -23,18 +23,18 @@ on:
       TF_API_TOKEN:
         description: Terraform Cloud user API token.
         required: true
-      # ARM_SUBSCRIPTION_ID:
-      #   description: Azure subscription ID.
-      #   required: true
-      # ARM_CLIENT_ID:
-      #   description: Azure client ID.
-      #   required: true
-      # ARM_CLIENT_SECRET:
-      #   description: Azure client secret.
-      #   required: true
-      # ARM_TENANT_ID:
-      #   description: Azure tenant ID.
-      #   required: true
+      ARM_SUBSCRIPTION_ID:
+        description: Azure subscription ID.
+        required: true
+      ARM_CLIENT_ID:
+        description: Azure client ID.
+        required: true
+      ARM_CLIENT_SECRET:
+        description: Azure client secret.
+        required: true
+      ARM_TENANT_ID:
+        description: Azure tenant ID.
+        required: true
 
 jobs:
   terraform:
