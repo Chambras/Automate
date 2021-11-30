@@ -17,7 +17,7 @@ jobs:
     uses: chambras/automate/.github/workflows/terraformAzure.yml@main
     with:
       terraform-version: 1.0.10
-      environment: Prod
+      environment: Dev
     secrets:
       ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
       ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}

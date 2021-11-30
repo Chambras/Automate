@@ -120,3 +120,8 @@ jobs:
       id: apply
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
       run: terraform apply -auto-approve
+
+    - name: Terraform Destroy
+      id: destroy
+      if: ${{ inputs.environment }} == 'Dev'
+      run: terraform destroy -auto-approve
