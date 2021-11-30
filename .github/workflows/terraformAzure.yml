@@ -121,6 +121,10 @@ jobs:
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
       run: terraform apply -auto-approve
 
+    - name: DEBUG
+      id: debug
+      run: echo "DEBUG: ${{ inputs.environment }}"
+
     - name: Terraform Destroy
       id: destroy
       if: ${{ inputs.environment }} == 'Dev'
