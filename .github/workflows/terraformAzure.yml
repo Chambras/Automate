@@ -3,6 +3,10 @@ name: Terraform-Azure
 on:
   workflow_call:
     inputs:
+      environment:
+        description: Environment to deploy.
+        type: string
+        default: Dev
       terraform-version:
         description: terraform version to use.
         type: string
@@ -19,18 +23,18 @@ on:
       TF_API_TOKEN:
         description: Terraform Cloud user API token.
         required: true
-      ARM_SUBSCRIPTION_ID:
-        description: Azure subscription ID.
-        required: true
-      ARM_CLIENT_ID:
-        description: Azure client ID.
-        required: true
-      ARM_CLIENT_SECRET:
-        description: Azure client secret.
-        required: true
-      ARM_TENANT_ID:
-        description: Azure tenant ID.
-        required: true
+      # ARM_SUBSCRIPTION_ID:
+      #   description: Azure subscription ID.
+      #   required: true
+      # ARM_CLIENT_ID:
+      #   description: Azure client ID.
+      #   required: true
+      # ARM_CLIENT_SECRET:
+      #   description: Azure client secret.
+      #   required: true
+      # ARM_TENANT_ID:
+      #   description: Azure tenant ID.
+      #   required: true
 
 jobs:
   terraform:
@@ -41,7 +45,7 @@ jobs:
         working-directory: ${{ inputs.project-folder }}
         shell: bash
 
-    environment: Dev
+    environment: ${{ inputs.environment }}
 
     env:
       ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
