@@ -34,7 +34,7 @@ jobs:
     - uses: terraform-linters/setup-tflint@v1
       name: Setup TFLint
       with:
-        tflint_version: ${{ inputs.tflint-version }}
+        tflint_version: v${{ inputs.tflint-version }}
 
     - name: Show version
       run: tflint --version
