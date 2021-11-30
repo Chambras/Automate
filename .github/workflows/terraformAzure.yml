@@ -41,7 +41,7 @@ jobs:
         working-directory: ${{ inputs.project-folder }}
         shell: bash
 
-    environment: Prod
+    environment: Dev
 
     env:
       ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
