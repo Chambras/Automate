@@ -32,6 +32,7 @@ jobs:
     with:
       terraform-version: 1.0.10
       environment: Prod
+      destroy-environment: false
     secrets:
       ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
       ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}

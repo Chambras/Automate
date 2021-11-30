@@ -3,6 +3,10 @@ name: Terraform-Azure
 on:
   workflow_call:
     inputs:
+      destroy-environment:
+        description: Destroy the environment after the workflow is finished.
+        type: boolean
+        default: true
       environment:
         description: Environment to deploy.
         type: string
@@ -127,5 +131,5 @@ jobs:
 
     - name: Terraform Destroy
       id: destroy
-      if: ${{ inputs.environment }} == Dev
+      if: ${{ inputs.destroy-environment }}
       run: terraform destroy -auto-approve
