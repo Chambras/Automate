@@ -123,7 +123,7 @@ jobs:
 
     - name: DEBUG
       id: debug
-      run: echo "DEBUG: ${{ inputs.environment }}"
+      run: echo ${{ inputs.environment }}
 
     - name: Terraform Destroy
       id: destroy
