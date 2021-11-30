@@ -9,4 +9,4 @@ on:
 jobs:
   codeAnalysis:
     name: 'Code Analysis'
-    uses: chambras/automate/.github/workflows/staticCodeAnalysis.yml  
+    uses: chambras/automate/.github/workflows/staticCodeAnalysis.yml@main
