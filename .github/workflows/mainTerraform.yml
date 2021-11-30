@@ -12,6 +12,7 @@ jobs:
     uses: chambras/automate/.github/workflows/staticCodeAnalysis.yml@main
 
   terraformAzure:
+    environment: Prod
     needs: [codeAnalysis]
     name: Build on Azure
     uses: chambras/automate/.github/workflows/terraformAzure.yml@main
