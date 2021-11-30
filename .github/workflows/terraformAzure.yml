@@ -8,13 +8,13 @@ on:
         type: string
         default: 1.0.10
       project-folder:
-          description: The folder containing the terraform project.
-          type: string
-          default: .
+        description: The folder containing the terraform project.
+        type: string
+        default: .
       cloud-type:
-          description: The cloud type to use.
-          type: string
-          default: public
+        description: The cloud type to use.
+        type: string
+        default: public
     secrets:
       TF_API_TOKEN:
         description: Terraform Cloud user API token.
