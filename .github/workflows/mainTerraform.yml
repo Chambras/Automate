@@ -9,12 +9,12 @@ on:
 jobs:
   codeAnalysis:
     name: Code Analysis
-    uses: chambras/automate/.github/workflows/staticCodeAnalysis.yml@main
+    uses: chambras/workflows/.github/workflows/staticCodeAnalysis.yml@main
 
   terraformAzureDev:
     needs: [codeAnalysis]
     name: Dev Build
-    uses: chambras/automate/.github/workflows/terraformAzure.yml@main
+    uses: chambras/workflows/.github/workflows/terraformAzure.yml@main
     with:
       terraform-version: 1.0.10
       environment: Dev
@@ -28,7 +28,7 @@ jobs:
   terraformAzureProd:
     needs: [terraformAzureDev]
     name: Prod Build
-    uses: chambras/automate/.github/workflows/terraformAzure.yml@main
+    uses: chambras/workflows/.github/workflows/terraformAzure.yml@main
     with:
       terraform-version: 1.0.10
       environment: Prod
