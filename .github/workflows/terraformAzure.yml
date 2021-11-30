@@ -127,5 +127,5 @@ jobs:
 
     - name: Terraform Destroy
       id: destroy
-      if: ${{ inputs.environment }} == 'Dev'
+      if: ${{ inputs.environment }} == Dev
       run: terraform destroy -auto-approve
