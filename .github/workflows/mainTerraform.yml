@@ -1,0 +1,11 @@
+name: Terraform-Azure
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+
+jobs:
+  codeAnalysis:
+    - uses: chambras/automate/.github/workflows/staticCodeAnalysis.yml  
