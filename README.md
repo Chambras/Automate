@@ -1,5 +1,4 @@
-
-![Terraform](https://github.com/Chambras/BasicRG/workflows/Terraform/badge.svg?branch=master)
+[![Terraform-Azure](https://github.com/Chambras/Automate/actions/workflows/mainTerraform.yml/badge.svg)](https://github.com/Chambras/Automate/actions/workflows/mainTerraform.yml)
 
 # Simple Environment
 
