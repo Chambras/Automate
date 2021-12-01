@@ -10,6 +10,8 @@ jobs:
   codeAnalysis:
     name: Code Analysis
     uses: chambras/workflows/.github/workflows/staticCodeAnalysis.yml@main
+    with:
+      project-folder: Infrastructure/terraform-azure/
 
   terraformAzureDev:
     needs: [codeAnalysis]
@@ -18,6 +20,7 @@ jobs:
     with:
       terraform-version: 1.0.10
       environment: Dev
+      project-folder: Infrastructure/terraform-azure/
     secrets:
       ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
       ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
@@ -33,6 +36,7 @@ jobs:
       terraform-version: 1.0.10
       environment: Prod
       destroy-environment: false
+      project-folder: Infrastructure/terraform-azure/
     secrets:
       ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
       ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
