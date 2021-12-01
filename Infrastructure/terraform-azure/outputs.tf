@@ -3,7 +3,7 @@ output "rgName" {
   description = "Resource Group Name."
 }
 
-# output "test" {
-#   value       = var.notused
-#   description = "This is a test output."
-# }
+output "test" {
+  value       = var.notused
+  description = "This is a test output."
+}
