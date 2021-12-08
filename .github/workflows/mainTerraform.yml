@@ -22,7 +22,7 @@ jobs:
       terraform-version: 1.0.11
       environment: Dev
       project-folder: Infrastructure/terraform-azure/
-      ResourceID: rgName
+      outputResourceID: rgName
     secrets:
       ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
       ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
@@ -39,7 +39,7 @@ jobs:
       environment: Prod
       destroy-environment: true
       project-folder: Infrastructure/terraform-azure/
-      ResourceID: rgName
+      outputResourceID: rgName
     secrets:
       ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
       ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
