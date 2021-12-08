@@ -12,9 +12,9 @@ jobs:
     name: Code Analysis
     runs-on: ubuntu-latest
     steps:
-      uses: chambras/workflows/.github/workflows/staticCodeAnalysis.yml@main
-      with:
-        project-folder: Infrastructure/terraform-azure/
+      - uses: chambras/workflows/.github/workflows/staticCodeAnalysis.yml@main
+        with:
+          project-folder: Infrastructure/terraform-azure/
 
   terraformAzureDev:
     needs: [codeAnalysis]
