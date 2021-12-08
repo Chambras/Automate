@@ -10,16 +10,13 @@ on:
 jobs:
   codeAnalysis:
     name: Code Analysis
-    runs-on: ubuntu-latest
-    steps:
-      - uses: chambras/workflows/.github/workflows/staticCodeAnalysis.yml@main
-        with:
-          project-folder: Infrastructure/terraform-azure/
+    uses: chambras/workflows/.github/workflows/staticCodeAnalysis.yml@main
+      with:
+        project-folder: Infrastructure/terraform-azure/
 
   terraformAzureDev:
     needs: [codeAnalysis]
     name: Dev Build
-    runs-on: ubuntu-latest
     uses: chambras/workflows/.github/workflows/terraformAzure.yml@main
     with:
       terraform-version: 1.0.11
@@ -35,7 +32,6 @@ jobs:
   terraformAzureProd:
     needs: [terraformAzureDev]
     name: Prod Build
-    runs-on: ubuntu-latest
     uses: chambras/workflows/.github/workflows/terraformAzure.yml@main
     with:
       terraform-version: 1.0.11
