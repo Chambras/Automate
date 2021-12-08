@@ -11,8 +11,8 @@ jobs:
   codeAnalysis:
     name: Code Analysis
     uses: chambras/workflows/.github/workflows/staticCodeAnalysis.yml@main
-      with:
-        project-folder: Infrastructure/terraform-azure/
+    with:
+      project-folder: Infrastructure/terraform-azure/
 
   terraformAzureDev:
     needs: [codeAnalysis]
