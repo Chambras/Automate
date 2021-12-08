@@ -6,9 +6,9 @@ terraform {
       name = "work-SimpleRG"
     }
   }
-  required_version = "= 1.0.10"
+  required_version = "= 1.0.11"
   required_providers {
-    azurerm = "= 2.85.0"
+    azurerm = "= 2.88.1"
   }
 }
 

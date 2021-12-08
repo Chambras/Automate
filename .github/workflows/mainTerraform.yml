@@ -5,10 +5,12 @@ on:
     branches:
     - main
   pull_request:
+  workflow_dispatch:
 
 jobs:
   codeAnalysis:
     name: Code Analysis
+    runs-on: ubuntu-latest
     uses: chambras/workflows/.github/workflows/staticCodeAnalysis.yml@main
     with:
       project-folder: Infrastructure/terraform-azure/
@@ -16,9 +18,10 @@ jobs:
   terraformAzureDev:
     needs: [codeAnalysis]
     name: Dev Build
+    runs-on: ubuntu-latest
     uses: chambras/workflows/.github/workflows/terraformAzure.yml@main
     with:
-      terraform-version: 1.0.10
+      terraform-version: 1.0.11
       environment: Dev
       project-folder: Infrastructure/terraform-azure/
     secrets:
@@ -31,11 +34,12 @@ jobs:
   terraformAzureProd:
     needs: [terraformAzureDev]
     name: Prod Build
+    runs-on: ubuntu-latest
     uses: chambras/workflows/.github/workflows/terraformAzure.yml@main
     with:
-      terraform-version: 1.0.10
+      terraform-version: 1.0.11
       environment: Prod
-      destroy-environment: false
+      destroy-environment: true
       project-folder: Infrastructure/terraform-azure/
     secrets:
       ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
