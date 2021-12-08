@@ -5,5 +5,5 @@ output "rgName" {
 
 output "test" {
   value       = var.notused
-  description = "This is a test output."
+  description = "This is a test output to test."
 }
