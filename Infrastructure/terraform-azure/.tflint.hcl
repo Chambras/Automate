@@ -1,6 +1,6 @@
 plugin "azurerm" {
     enabled = true
-    version = "0.13.2"
+    version = "0.18.0"
     source  = "github.com/terraform-linters/tflint-ruleset-azurerm"
 }
 
@@ -47,6 +47,13 @@ rule "terraform_unused_required_providers"{
 rule "terraform_standard_module_structure"{
   enabled = true
 }
+
+rule "azurerm_resource_missing_tags" {
+  enabled = true
+  exclude = ["azurerm_virtual_machine"]
+  tags = ["Environment", "Department"]
+}
+
 
 config {
   disabled_by_default = false
