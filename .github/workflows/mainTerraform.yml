@@ -32,7 +32,7 @@ jobs:
       TF_API_TOKEN: ${{ secrets.TF_API_TOKEN }}
 
   terraformAzureProd:
-    needs: [terraformAzureDev]
+    #needs: [terraformAzureDev]
     name: Prod Build
     uses: chambras/workflows/.github/workflows/terraformAzure.yml@main
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
