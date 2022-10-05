@@ -20,7 +20,6 @@ variable "tags" {
   type = map(any)
   default = {
     "Environment" = "Development"
-    "Department"  = "IT"
     "Project"     = "Test GitHub Actions"
     "BillingCode" = "Internal"
     "Customer"    = "Demo"
@@ -31,11 +30,11 @@ variable "tags" {
 
 ## Purview Account Variables
 
-/*variable "purviewAccountName" {
+variable "purviewAccountName" {
   type        = string
   default     = "TFmarcelo"
   description = "Purview Account Name."
-}*/
+}
 
 variable "notused" {
   type        = string
