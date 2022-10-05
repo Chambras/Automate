@@ -19,7 +19,7 @@ jobs:
     name: Dev Build
     uses: chambras/workflows/.github/workflows/terraformAzure.yml@main
     with:
-      terraform-version: 1.0.11
+      terraform-version: 1.3.0
       environment: Dev
       project-folder: Infrastructure/terraform-azure/
       outputResourceID: rgName
@@ -34,8 +34,9 @@ jobs:
     needs: [terraformAzureDev]
     name: Prod Build
     uses: chambras/workflows/.github/workflows/terraformAzure.yml@main
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     with:
-      terraform-version: 1.0.11
+      terraform-version: 1.3.0
       environment: Prod
       destroy-environment: true
       project-folder: Infrastructure/terraform-azure/
