@@ -31,11 +31,11 @@ variable "tags" {
 
 ## Purview Account Variables
 
-variable "purviewAccountName" {
+/*variable "purviewAccountName" {
   type        = string
   default     = "TFmarcelo"
   description = "Purview Account Name."
-}
+}*/
 
 variable "notused" {
   type        = string

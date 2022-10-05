@@ -8,7 +8,7 @@ output "test" {
   description = "This is a test output to test."
 }
 
-output "purviewID" {
+/*output "purviewID" {
   value       = azurerm_purview_account.purviewAccount.id
   description = "Purview account ID."
-}
+}*/
