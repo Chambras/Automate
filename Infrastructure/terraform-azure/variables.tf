@@ -20,7 +20,6 @@ variable "tags" {
   type = map(any)
   default = {
     "Environment" = "Development"
-    "Department"  = "IT-test"
     "Project"     = "Test GitHub Actions"
     "BillingCode" = "Internal"
     "Customer"    = "Demo"
