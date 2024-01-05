@@ -42,4 +42,3 @@ variable "notused" {
   default     = "notused"
   description = "not used."
 }
-
